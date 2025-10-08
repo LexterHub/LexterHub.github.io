@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>LexterHub — Get Script</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#05060a;
+  --card:#0b1220;
+  --muted:#92a6c0;
+  --accent:#7c5cff;
+  --accent-2:#33e0c1;
+  --glass: rgba(255,255,255,0.03);
+  --radius:16px;
+  --maxw:1100px;
+}
+*{box-sizing:border-box;}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial;background:var(--bg);color:#e8f2ff;display:flex;justify-content:center;padding:28px;}
+.wrap{width:100%;max-width:var(--maxw);display:flex;flex-direction:column;gap:22px;}
+.hero{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));border-radius:var(--radius);padding:36px;box-shadow:0 18px 60px rgba(6,8,18,0.7);border:1px solid var(--glass);display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;}
+.logo-wrap{width:96px;height:96px;border-radius:18px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--accent),#3a7bff);box-shadow:0 18px 60px rgba(124,92,255,0.14);border:1px solid rgba(255,255,255,0.03);}
+.logo-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
+h1{margin:0;font-weight:800;font-size:28px;letter-spacing:-0.4px;}
+.subtitle{color:var(--muted);margin:0;font-size:14px;}
+.cta-row{display:flex;flex-direction:column;gap:10px;align-items:center;width:100%;}
+.get-btn{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;padding:14px 22px;border-radius:12px;border:0;font-weight:800;font-size:16px;display:inline-flex;align-items:center;gap:12px;cursor:pointer;box-shadow:0 16px 60px rgba(59,65,140,0.12);transition:transform .14s cubic-bezier(.2,.9,.3,1), box-shadow .14s ease;}
+.get-btn:active{transform:translateY(2px);}
+.get-btn .spark{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,0.14);box-shadow:0 8px 22px rgba(0,0,0,0.35) inset;}
+.hint{color:var(--muted);font-size:13px;margin-top:4px;}
+.content{display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start;}
+.features{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.02);}
+.features h2{margin:0 0 8px 0;font-size:18px;}
+.feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+.feature{background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);color:var(--muted);font-size:14px;}
+.feature strong{color:#fff;display:block;margin-bottom:6px;}
+.panel{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,0.02);display:flex;flex-direction:column;gap:10px;height:100%;}
+.panel h3{margin:0;font-size:16px;}
+.meta{color:var(--muted);font-size:13px;}
+.code{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border-radius:10px;padding:12px;border:1px solid rgba(255,255,255,0.02);font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;font-size:13px;color:#cfe9ff;overflow:auto;max-height:260px;}
+pre{margin:0;white-space:pre-wrap;word-break:break-word;}
+.panel .controls{display:flex;gap:10px;margin-top:auto;align-items:center;}
+.copy-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;padding:10px 14px;border-radius:10px;border:0;font-weight:800;cursor:pointer;}
+.copy-ghost{display:none;}
+.footer-note{color:var(--muted);font-size:13px;margin-top:6px;}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:26px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;padding:10px 16px;border-radius:12px;box-shadow:0 12px 40px rgba(2,6,23,0.7);display:none;font-weight:800;z-index:90;}
+@media (max-width:980px){.content{grid-template-columns:1fr}.panel{order:-1;}}
+@media (max-width:480px){.logo-wrap{width:80px;height:80px;}h1{font-size:22px;}.get-btn{width:100%;}.feature-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="wrap" role="main">
+<header class="hero" role="banner" aria-labelledby="title">
+  <div class="logo-wrap">
+    <img src="https://github.com/StealADexter/StealADexter/blob/main/logos/logo.png?raw=true" alt="LexterHub logo" />
+  </div>
+  <h1 id="title">LexterHub</h1>
+  <p class="subtitle">#1 Script for Steal A Dexter</p>
+  <div class="cta-row">
+    <button class="get-btn" id="getScriptBtn">
+      <span class="spark"></span>
+      <span>Get Script</span>
+    </button>
+    <div class="hint">Click to copy the script to your clipboard</div>
+  </div>
+</header>
+
+<div class="content">
+  <section class="features">
+    <h2>Features</h2>
+    <div class="feature-grid">
+      <div class="feature"><strong>Steal (Smooth Glide)</strong> Smooth client-side glide to stored spawn or presets.</div>
+      <div class="feature"><strong>Speed Boost</strong> Physics-based movement multiplier for fast traversal.</div>
+      <div class="feature"><strong>Infinite Jump</strong> Toggleable jump extension via humanoid states.</div>
+      <div class="feature"><strong>Noclip</strong> Toggle collisions off to move through obstacles.</div>
+      <div class="feature"><strong>Teleports</strong> One-tap teleports for left/right bases.</div>
+    </div>
+    <p class="footer-note">Made By Marcus.</p>
+  </section>
+
+  <aside class="panel">
+    <h3>Script Preview</h3>
+    <div class="meta">The script will be copied when you press <strong>Get Script</strong>.</div>
+    <div class="code" id="codeBox">
+      <pre id="codePre"></pre>
+    </div>
+    <div class="controls">
+      <button class="copy-primary" id="copyBtn">Copy Script</button>
+    </div>
+  </aside>
+</div>
+</div>
+
+<div id="toast" class="toast">Copied ✓</div>
+
+<script>
+const script = "loadstring(https://raw.githubusercontent.com/StealADexter/StealADexter/refs/heads/main/stealadexter.lua)()";
+const getScriptBtn = document.getElementById('getScriptBtn');
+const copyBtn = document.getElementById('copyBtn');
+const codePre = document.getElementById('codePre');
+const toast = document.getElementById('toast');
+
+codePre.textContent = script;
+let toastTimer = null;
+
+function showToast(msg){
+  toast.textContent = msg;
+  toast.style.display = 'block';
+  if(toastTimer) clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>{ toast.style.display='none'; }, 2000);
+}
+
+async function copyText(text){
+  try{
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      await navigator.clipboard.writeText(text);
+      showToast('Copied ✓');
+    } else {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly','');
+      ta.style.position = 'absolute';
+      ta.style.left='-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      showToast('Copied ✓');
+    }
+  } catch(e){
+    alert('Copy failed. Select manually: '+text);
+  }
+}
+
+getScriptBtn.addEventListener('click',()=>{copyText(script)});
+copyBtn.addEventListener('click',()=>copyText(script));
+</script>
+</body>
+</html>
