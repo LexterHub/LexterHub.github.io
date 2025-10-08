@@ -37,4 +37,3 @@ Execute the script using a compatible Roblox executor (e.g., Synapse X, Fluxus, 
 
 ## Notes
 - Some features (like Jump Power adjustments and Movement tab) are placeholders for future updates.  
-
